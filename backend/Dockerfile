@@ -23,6 +23,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Copy fat jar
 ADD target/backend-app-fat.jar /usr/lib/metasite/apps/backend-app-fat.jar
 # Run application
-CMD java ${JAVA_OPTS} -jar /usr/lib/metasite/apps/backend-app-fat.jar
+CMD java ${JAVA_OPTS} -jar /usr/lib/metasite/apps/backend-app-fat.jar -DoutputDir="/usr/lib/metasite/results"
 # Make application accessible on port 8080
 EXPOSE 8080
