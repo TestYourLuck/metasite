@@ -1,0 +1,58 @@
+# use global syntax for excludes
+syntax: glob
+
+#exclude intelliJ files
+.idea
+.vagrant
+.node
+*.iml
+
+#exclude eclipse files
+.settings
+.metadata
+.workspace
+*.project
+*.classpath
+*.springBeans
+*.springWebflow
+maven-eclipse.xml
+
+#common tools files
+*.pmd
+*.checkstyle
+target
+**/bin/**
+test-output
+.toDelete
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage tools
+lib-cov
+coverage
+
+# Dependency directory
+node_modules
+
+*.tgz
+
+# Vertx
+.vertx
+
+# Mac OSX
+.DS_Store
+
+# Eclipse Trace
+*._trace
+
+# Eclipse XText & Xtend
+*/xtend-gen/*
+*/xtext-gen/*
+*/src-gen/*
