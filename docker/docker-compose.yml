@@ -1,0 +1,18 @@
+version: '2.2'
+
+services:
+    backend:
+        build: ../backend
+        networks:
+            - metasite_net
+        ports:
+            - "8080:8080"
+            - "8000:8000"
+        command: /bin/sh -c "java $${JAVA_OPTS} -DoutputDir=$${results_directory} -jar /usr/lib/metasite/apps/backend-app-fat.jar"
+        environment:
+            results_directory: '/usr/lib/metasite/results'
+            JAVA_OPTS: '-Xms128m -Xmx1024m -XX:+UseConcMarkSweepGC -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000'
+            
+networks:
+    metasite_net:
+        driver: bridge
